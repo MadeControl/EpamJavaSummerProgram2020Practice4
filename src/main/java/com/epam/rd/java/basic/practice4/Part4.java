@@ -6,31 +6,21 @@ import java.util.regex.Pattern;
 
 public class Part4 implements Iterable<String> {
 
+//    private static final String REGEX = "(\\w+,*\\s*)*\\.+";
     private static final String REGEX = "(\\w+,*\\s*)*\\.+";
     private static final String FILE_CONTENT = Part1.readFromFile("part4.txt", "cp1251");
 
     public static void main(String[] args) {
 
-//        Iterator<String> iterator = new Part4().iterator();
-//        StringBuilder stringBuilder = new StringBuilder();
-//
-//        while (iterator.hasNext()){
-//            stringBuilder
-//                    .append(iterator.next())
-//                    .append("\n");
-//        }
-//
-//        System.out.print(stringBuilder.toString());
-
+        Iterator<String> iterator = new Part4().iterator();
         StringBuilder stringBuilder = new StringBuilder();
-        Pattern pattern = Pattern.compile(REGEX, Pattern.UNICODE_CHARACTER_CLASS);
-        Matcher matcher = pattern.matcher(FILE_CONTENT);
 
-        while (matcher.find()){
-            stringBuilder.append(matcher.group()).append("\n");
+        while (iterator.hasNext()){
+            stringBuilder
+                    .append(iterator.next());
         }
-        System.out.println(stringBuilder.toString());
 
+        System.out.print(stringBuilder.toString());
     }
 
     @Override
