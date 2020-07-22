@@ -31,7 +31,7 @@ public class Part2 {
 
         String contentForOutputFile = getStringOfTenSortedNumbers(contentForInputFile);
         stringBuilder
-                .append("ouput")
+                .append("output")
                 .append(ARROW)
                 .append(writeToFile(FILE_OUTPUT, ENCODING, contentForOutputFile));
 
