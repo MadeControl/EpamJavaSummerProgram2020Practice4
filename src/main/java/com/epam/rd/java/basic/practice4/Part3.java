@@ -1,5 +1,8 @@
 package com.epam.rd.java.basic.practice4;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,20 +17,17 @@ public class Part3 {
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String inputData;
-        String result;
 
-        while (true) {
-            inputData = SCANNER.nextLine();
-            result = getResultOperation(inputData);
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String consoleString;
 
-            if (!result.equals("stop")) {
-                System.out.println(result);
-            } else {
-                break;
+            while (!(consoleString = br.readLine()).equals("stop")) {
+                System.out.println(getResultOperation(consoleString));
             }
-
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
     }
 
     public static String getValuesFromFile(String regEx){
