@@ -17,17 +17,17 @@ public class Part3 {
         String inputData;
         String result;
 
+        while (true) {
             inputData = SCANNER.nextLine();
             result = getResultOperation(inputData);
 
-            if(!result.equals("stop")){
+            if (!result.equals("stop")) {
                 System.out.println(result);
+            } else {
+                break;
             }
-//            else if(result.equals("")) {
-//                continue;
-//            }
 
-
+        }
     }
 
     public static String getValuesFromFile(String regEx){
@@ -45,18 +45,12 @@ public class Part3 {
 
         switch (inputData){
             case "char":
-            case "Char":
-            case "chars":
-            case "Chars":
                 return getValuesFromFile(REGEX_CHAR);
             case "int":
                 return getValuesFromFile(REGEX_INT);
             case "String":
                 return getValuesFromFile(REGEX_STRING);
             case "double":
-            case "doubles":
-            case "Double":
-            case "Doubles":
                 return getValuesFromFile(REGEX_DOUBLE);
             case "stop":
                 return "stop";
