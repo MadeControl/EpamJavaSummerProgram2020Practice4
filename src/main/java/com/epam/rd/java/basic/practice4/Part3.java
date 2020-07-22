@@ -55,6 +55,9 @@ public class Part3 {
             case "String":
                 return getValuesFromFile(REGEX_STRING);
             case "double":
+            case "doubles":
+            case "Double":
+            case "Doubles":
                 return getValuesFromFile(REGEX_DOUBLE);
             case "stop":
                 return "stop";
