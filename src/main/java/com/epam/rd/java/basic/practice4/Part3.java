@@ -37,7 +37,7 @@ public class Part3 {
         StringBuilder stringBuilder = new StringBuilder();
         while (matcher.find()){
             stringBuilder.append(matcher.group()).append(" ");
-        } return stringBuilder.delete(stringBuilder.length()-1, stringBuilder.length()).toString();
+        } return stringBuilder.toString();
 
     }
 
@@ -45,6 +45,9 @@ public class Part3 {
 
         switch (inputData){
             case "char":
+            case "Char":
+            case "chars":
+            case "Chars":
                 return getValuesFromFile(REGEX_CHAR);
             case "int":
                 return getValuesFromFile(REGEX_INT);
