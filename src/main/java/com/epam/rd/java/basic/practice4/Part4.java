@@ -17,10 +17,10 @@ public class Part4 implements Iterable<String> {
         while (iterator.hasNext()){
             stringBuilder
                     .append(iterator.next())
-                    .append("\n");
+                    .append(System.lineSeparator());
         }
 
-        System.out.println(stringBuilder.toString());
+        System.out.print(stringBuilder.toString());
 
     }
 
