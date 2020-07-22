@@ -18,7 +18,7 @@ public class Part3 {
         String result;
 
         while (true) {
-            inputData = SCANNER.next();
+            inputData = SCANNER.nextLine();
             result = getResultOperation(inputData);
 
             if (!result.equals("stop")) {
