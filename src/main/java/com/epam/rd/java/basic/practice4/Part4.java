@@ -17,7 +17,7 @@ public class Part4 implements Iterable<String> {
         while (iterator.hasNext()){
             stringBuilder
                     .append(iterator.next())
-                    .append(System.lineSeparator());
+                    .append("\n");
         }
 
         System.out.print(stringBuilder.toString());
