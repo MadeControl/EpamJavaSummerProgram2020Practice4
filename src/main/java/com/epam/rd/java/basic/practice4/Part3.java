@@ -19,13 +19,14 @@ public class Part3 {
 
     public static void main(String[] args) {
 
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             String consoleString;
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
             while (!(consoleString = br.readLine()).equals("stop")) {
                 System.out.println(getResultOperation(consoleString));
             }
-            
+
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "IOException", e);
         }
@@ -37,6 +38,7 @@ public class Part3 {
         Pattern pattern = Pattern.compile(regEx, Pattern.UNICODE_CHARACTER_CLASS);
         Matcher matcher = pattern.matcher(FILE_CONTENT);
         StringBuilder stringBuilder = new StringBuilder();
+
         while (matcher.find()){
             stringBuilder.append(matcher.group()).append(" ");
         } return stringBuilder.toString();
