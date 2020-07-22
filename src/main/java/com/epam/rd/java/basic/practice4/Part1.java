@@ -40,10 +40,12 @@ public class Part1 {
                     stringBuilder.append(word);
                 } stringBuilder.append(" ");
 
-            } stringBuilder.append(System.lineSeparator());
+            } stringBuilder
+                    .delete(stringBuilder.length()-1, stringBuilder.length())
+                    .append(System.lineSeparator());
 
         }
-        System.out.print(stringBuilder.delete(stringBuilder.length()-1, stringBuilder.length()).toString());
+        System.out.print(stringBuilder.toString());
 
     }
 
