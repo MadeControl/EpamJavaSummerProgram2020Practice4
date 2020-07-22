@@ -20,13 +20,22 @@ public class Part2 {
 
     public static void main(String[] args) {
 
+        StringBuilder stringBuilder = new StringBuilder();
 
         String contentForInputFile = getStringOfTenGeneratedNumbers();
-        System.out.println(writeToFile(FILE_INPUT, ENCODING, contentForInputFile));
+        stringBuilder
+                .append("input")
+                .append(ARROW)
+                .append(writeToFile(FILE_INPUT, ENCODING, contentForInputFile))
+                .append(Part1.LINE_SEPARATOR);
 
-        String contentForOutputFile = "input" + ARROW + contentForInputFile
-                                    + "output" + ARROW + getStringOfTenSortedNumbers(contentForInputFile);
-        System.out.println(writeToFile(FILE_OUTPUT, ENCODING, contentForOutputFile));
+        String contentForOutputFile = getStringOfTenSortedNumbers(contentForInputFile);
+        stringBuilder
+                .append("ouput")
+                .append(ARROW)
+                .append(writeToFile(FILE_OUTPUT, ENCODING, contentForOutputFile));
+
+        System.out.println(stringBuilder.toString());
 
     }
 
