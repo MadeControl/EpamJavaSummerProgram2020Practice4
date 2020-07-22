@@ -24,9 +24,11 @@ public class Part2 {
 //
 //        String contentForInputFile = "input" + ARROW + stringOfTenNumbers;
 //        System.out.println(writeToFile(FILE_INPUT, ENCODING, contentForInputFile));
+        System.out.println(writeToFile(FILE_INPUT, ENCODING, " "));
 //
 //        String contentForOutputFile = "output" + ARROW + getStringOfTenSortedNumbers(stringOfTenNumbers);
 //        System.out.println(writeToFile(FILE_OUTPUT, ENCODING, contentForOutputFile));
+        System.out.println(writeToFile(FILE_OUTPUT, ENCODING, " "));
         System.out.println("");
 
     }
