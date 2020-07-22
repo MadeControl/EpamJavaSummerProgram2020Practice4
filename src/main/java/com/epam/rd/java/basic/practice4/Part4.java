@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class Part4 implements Iterable<String> {
 
-    private static final String REGEX = "(\\w+\\s*)+\\.";
+    private static final String REGEX = "(\\w+,*\\s*)+\\.";
     private static final String FILE_CONTENT = Part1.readFromFile("part4.txt", "cp1251");
 
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class Part4 implements Iterable<String> {
 
     private class MyClass implements Iterator<String> {
 
-        Pattern pattern = Pattern.compile(REGEX);
+        Pattern pattern = Pattern.compile(REGEX, Pattern.UNICODE_CHARACTER_CLASS);
         Matcher matcher = pattern.matcher(FILE_CONTENT);
 
         @Override
