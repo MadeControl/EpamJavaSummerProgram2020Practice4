@@ -26,6 +26,7 @@ public class Part3 {
             } else if(result.equals("")) {
                 continue;
             } System.out.println(result);
+            break;
         }
 
     }
