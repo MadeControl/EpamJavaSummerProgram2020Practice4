@@ -11,16 +11,25 @@ public class Part4 implements Iterable<String> {
 
     public static void main(String[] args) {
 
-        Iterator<String> iterator = new Part4().iterator();
+//        Iterator<String> iterator = new Part4().iterator();
+//        StringBuilder stringBuilder = new StringBuilder();
+//
+//        while (iterator.hasNext()){
+//            stringBuilder
+//                    .append(iterator.next())
+//                    .append("\n");
+//        }
+//
+//        System.out.print(stringBuilder.toString());
+
         StringBuilder stringBuilder = new StringBuilder();
+        Pattern pattern = Pattern.compile(REGEX, Pattern.UNICODE_CHARACTER_CLASS);
+        Matcher matcher = pattern.matcher(FILE_CONTENT);
 
-        while (iterator.hasNext()){
-            stringBuilder
-                    .append(iterator.next())
-                    .append("\n");
+        while (matcher.find()){
+            stringBuilder.append(matcher.group()).append("\n");
         }
-
-        System.out.print(stringBuilder.toString());
+        System.out.println(stringBuilder.toString());
 
     }
 
