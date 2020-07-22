@@ -20,14 +20,12 @@ public class Part2 {
 
     public static void main(String[] args) {
 
-        String stringOfTenNumbers = getStringOfTenGeneratedNumbers();
 
-//        String contentForInputFile = "input" + ARROW + stringOfTenNumbers;
-        String contentForInputFile = stringOfTenNumbers;
+        String contentForInputFile = getStringOfTenGeneratedNumbers();
         System.out.println(writeToFile(FILE_INPUT, ENCODING, contentForInputFile));
 
-//        String contentForOutputFile = "output" + ARROW + getStringOfTenSortedNumbers(stringOfTenNumbers);
-        String contentForOutputFile = getStringOfTenSortedNumbers(stringOfTenNumbers);
+        String contentForOutputFile = "input" + ARROW + contentForInputFile
+                                    + "output" + ARROW + getStringOfTenSortedNumbers(contentForInputFile);
         System.out.println(writeToFile(FILE_OUTPUT, ENCODING, contentForOutputFile));
 
     }
