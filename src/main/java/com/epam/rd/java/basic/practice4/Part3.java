@@ -18,12 +18,11 @@ public class Part3 {
         String result;
 
         while (true) {
-            inputData = SCANNER.nextLine();
+            inputData = SCANNER.next();
             result = getResultOperation(inputData);
 
             if (!result.equals("stop")) {
                 System.out.println(result);
-                SCANNER.nextLine();
             } else {
                 break;
             }
