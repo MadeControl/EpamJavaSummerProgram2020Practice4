@@ -11,14 +11,16 @@ public class Part4 implements Iterable<String> {
 
     public static void main(String[] args) {
 
-        Part4 part4 = new Part4();
+        Iterator<String> iterator = new Part4().iterator();
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (String s : part4) {
-            stringBuilder.append(s).append(System.lineSeparator());
+        while (iterator.hasNext()){
+            stringBuilder
+                    .append(iterator.next())
+                    .append("\n");
         }
 
-        System.out.print(stringBuilder.toString());
+        System.out.println(stringBuilder.toString());
 
     }
 
