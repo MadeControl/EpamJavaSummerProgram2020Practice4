@@ -17,17 +17,16 @@ public class Part3 {
         String inputData;
         String result;
 
-        while (true){
             inputData = SCANNER.nextLine();
             result = getResultOperation(inputData);
 
-            if(result.equals("stop")){
-                break;
-            } else if(result.equals("")) {
-                continue;
-            } System.out.println(result);
-            break;
-        }
+            if(!result.equals("stop")){
+                System.out.println(result);
+            }
+//            else if(result.equals("")) {
+//                continue;
+//            }
+
 
     }
 
