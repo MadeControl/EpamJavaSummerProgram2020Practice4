@@ -1,0 +1,1 @@
+The class should parse a text file and return sentences from the file. A sentence is understood as a sequence that starts with a capital letter and ends with a dot. Take the original file small in size. A few lines and a few sentences are enough.
