@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 
 public class Part1 {
 
@@ -14,7 +13,7 @@ public class Part1 {
 
         try {
 
-            br = new BufferedReader(new InputStreamReader(new FileInputStream("part1.txt"), StandardCharsets.UTF_8));
+            br = new BufferedReader(new InputStreamReader(new FileInputStream("part1.txt"), "cp1251"));
 
             String temp;
             while ( (temp = br.readLine()) != null){
@@ -24,7 +23,7 @@ public class Part1 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         String[] stringsOfContent = sb.toString().split("\n");
         sb = new StringBuilder();
 
