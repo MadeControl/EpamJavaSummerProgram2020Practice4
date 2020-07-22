@@ -8,24 +8,25 @@ import java.io.InputStreamReader;
 public class Part1 {
 
     public static void main(String[] args) {
-        BufferedReader br;
-        StringBuilder sb = new StringBuilder();
+        BufferedReader bufferedReader;
+        StringBuilder stringBuilder = new StringBuilder();
 
         try {
 
-            br = new BufferedReader(new InputStreamReader(new FileInputStream("part1.txt"), "cp1251"));
+            bufferedReader = new BufferedReader(new InputStreamReader(
+                    new FileInputStream("part1.txt"), "cp1251"));
 
             String temp;
-            while ( (temp = br.readLine()) != null){
-                sb.append(temp).append(System.lineSeparator());
+            while ( (temp = bufferedReader.readLine()) != null){
+                stringBuilder.append(temp).append(System.lineSeparator());
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        String[] stringsOfContent = sb.toString().split("\n");
-        sb = new StringBuilder();
+        String[] stringsOfContent = stringBuilder.toString().split(System.lineSeparator());
+        stringBuilder = new StringBuilder();
 
         for(String str : stringsOfContent){
 
@@ -34,15 +35,15 @@ public class Part1 {
             for (String word : wordsOfString){
 
                 if(word.length() >= 4){
-                    sb.append(word.substring(word.length() - (word.length() - 2)));
+                    stringBuilder.append(word.substring(word.length() - (word.length() - 2)));
                 } else {
-                    sb.append(word);
-                } sb.append(" ");
+                    stringBuilder.append(word);
+                } stringBuilder.append(" ");
 
-            } sb.append("\n");
+            } stringBuilder.append(System.lineSeparator());
 
         }
-        System.out.print(sb.delete(sb.length()-2, sb.length()).toString());
+        System.out.print(stringBuilder.toString());
 
     }
 
