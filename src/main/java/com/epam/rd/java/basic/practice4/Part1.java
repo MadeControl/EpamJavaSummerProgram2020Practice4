@@ -43,7 +43,7 @@ public class Part1 {
             } stringBuilder.append(System.lineSeparator());
 
         }
-        System.out.print(stringBuilder.toString());
+        System.out.print(stringBuilder.delete(stringBuilder.length()-1, stringBuilder.length()).toString());
 
     }
 
