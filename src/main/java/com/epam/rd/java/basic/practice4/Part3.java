@@ -23,6 +23,7 @@ public class Part3 {
 
             if (!result.equals("stop")) {
                 System.out.println(result);
+                SCANNER.nextLine();
             } else {
                 break;
             }
