@@ -26,6 +26,7 @@ public class Part3 {
             while (!(consoleString = br.readLine()).equals("stop")) {
                 System.out.println(getResultOperation(consoleString));
             }
+            System.in.close();
 
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "IOException", e);
