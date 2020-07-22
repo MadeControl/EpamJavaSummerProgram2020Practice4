@@ -14,14 +14,11 @@ public class Part4 implements Iterable<String> {
     public static void main(String[] args) {
 
         Iterator<String> iterator = new Part4().iterator();
-        StringBuilder stringBuilder = new StringBuilder();
 
         while (iterator.hasNext()){
-            stringBuilder
-                    .append(iterator.next()).append("\n");
+            System.out.println(iterator.next());
         }
 
-        System.out.print(stringBuilder.toString());
     }
 
     @Override
