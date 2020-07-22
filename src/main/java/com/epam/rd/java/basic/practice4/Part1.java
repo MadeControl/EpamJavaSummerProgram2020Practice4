@@ -55,7 +55,7 @@ public class Part1 {
                     .delete(stringBuilder.length()-1, stringBuilder.length())
                     .append(LINE_SEPARATOR);
 
-        } return stringBuilder.toString();
+        } return stringBuilder.delete(stringBuilder.length()-1, stringBuilder.length()).toString();
 
     }
 
