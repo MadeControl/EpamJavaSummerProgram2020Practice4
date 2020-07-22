@@ -3,7 +3,8 @@ package com.epam.rd.java.basic.practice4;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,7 +15,7 @@ public class Part3 {
     public static final String REGEX_CHAR = "\\b\\w\\b";
     public static final String REGEX_STRING = "\\b[\\w&&\\D]{2,}\\b";
     public static final String FILE_CONTENT = Part1.readFromFile("part3.txt", "cp1251");
-    private static final Scanner SCANNER = new Scanner(System.in);
+    private static final Logger LOGGER = Logger.getLogger(Part3.class.getName());
 
     public static void main(String[] args) {
 
@@ -24,8 +25,9 @@ public class Part3 {
             while (!(consoleString = br.readLine()).equals("stop")) {
                 System.out.println(getResultOperation(consoleString));
             }
+            
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "IOException", e);
         }
 
     }
@@ -58,8 +60,5 @@ public class Part3 {
         }
 
     }
-
-
-
 
 }
