@@ -17,7 +17,7 @@ public class Part5 {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
             while (!(consoleString = br.readLine()).equals("stop")) {
-//                System.out.println(getResultOperation(consoleString));
+                System.out.println("apple");
             }
             System.in.close();
 
