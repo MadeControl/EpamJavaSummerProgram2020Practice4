@@ -4,31 +4,42 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Part1 {
 
+    private static final Logger LOGGER = Logger.getLogger(Part1.class.getName());
+    public static final String LINE_SEPARATOR = System.lineSeparator();
+
     public static void main(String[] args) {
-        BufferedReader bufferedReader;
+
+        final String fileName = "part1.txt";
+        final String encoding  = "cp1251";
+        System.out.println(part1(fileName, encoding));
+
+    }
+
+    public static String part1(String fileName, String encoding){
+
         StringBuilder stringBuilder = new StringBuilder();
 
-        try {
-
-            bufferedReader = new BufferedReader(new InputStreamReader(
-                    new FileInputStream("part1.txt"), "cp1251"));
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
+                new FileInputStream(fileName), encoding))) {
 
             String temp;
             while ( (temp = bufferedReader.readLine()) != null){
-                stringBuilder.append(temp).append(System.lineSeparator());
+                stringBuilder.append(temp).append(LINE_SEPARATOR);
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "IOException-error", e);
         }
 
-        String[] stringsOfContent = stringBuilder.toString().split(System.lineSeparator());
+        String[] stringsOfText = stringBuilder.toString().split(LINE_SEPARATOR);
         stringBuilder = new StringBuilder();
 
-        for(String str : stringsOfContent){
+        for(String str : stringsOfText){
 
             String[] wordsOfString = str.split("[\\s\n\r]");
 
@@ -42,10 +53,9 @@ public class Part1 {
 
             } stringBuilder
                     .delete(stringBuilder.length()-1, stringBuilder.length())
-                    .append(System.lineSeparator());
+                    .append(LINE_SEPARATOR);
 
-        }
-        System.out.print(stringBuilder.toString());
+        } return stringBuilder.toString();
 
     }
 
