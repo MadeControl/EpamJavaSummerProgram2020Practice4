@@ -54,7 +54,7 @@ public class Part3 {
                 return getValuesFromFile(REGEX_DOUBLE);
             case "stop":
                 return "stop";
-            default: return "";
+            default: return "Incorrect input";
         }
 
     }
