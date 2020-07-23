@@ -12,16 +12,15 @@ public class Part4 implements Iterable<String> {
     private static final String FILE_CONTENT = Part1.readFromFile("part4.txt", "cp1251");
 
     public static void main(String[] args) {
-        
-        String[] array = FILE_CONTENT.split(System.lineSeparator());
-        StringBuilder stringBuilder1 = new StringBuilder();
-        for(String s : array){
-            stringBuilder1.append(s);
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for(String s : FILE_CONTENT.split(System.lineSeparator())){
+            stringBuilder.append(s).append(" ");
         }
 
-        String fileContent = stringBuilder1.toString();
         Pattern pattern = Pattern.compile(REGEX);
-        Matcher matcher = pattern.matcher(fileContent);
+        Matcher matcher = pattern.matcher(stringBuilder.toString());
 
         while (matcher.find()){
             System.out.println(matcher.group());
