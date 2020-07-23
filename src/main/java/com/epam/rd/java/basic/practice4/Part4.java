@@ -8,16 +8,17 @@ public class Part4 implements Iterable<String> {
 
 //    private static final String REGEX = "(\\w+,*\\s*)*\\.+";
 //    private static final String REGEX = "((\\w+,?\\s?)+\\.)";
-    private static final String REGEX = "(?<!\\n?)\\p{javaUpperCase}.*?\\.";
+    private static final String REGEX = "(?<!\\n?)?\\p{javaUpperCase}.*?\\.";
     private static final String FILE_CONTENT = Part1.readFromFile("part4.txt", "cp1251");
 
     public static void main(String[] args) {
 
-        Iterator<String> iterator = new Part4().iterator();
-
-        while (iterator.hasNext()){
-            System.out.println(iterator.next());
-        }
+//        Iterator<String> iterator = new Part4().iterator();
+//
+//        while (iterator.hasNext()){
+//            System.out.println(iterator.next());
+//        }
+        System.out.println("zzz");
 
     }
 
