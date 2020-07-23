@@ -1,5 +1,6 @@
 package com.epam.rd.java.basic.practice4;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.regex.Matcher;
@@ -7,18 +8,24 @@ import java.util.regex.Pattern;
 
 public class Part4 implements Iterable<String> {
 
-    private static final String REGEX = "((\\p{javaUpperCase})(?=\n\r)*[\\w[^.]]*(?=\n\r)*(\\.))";
+    private static final String REGEX = "\\p{Lu}.*?\\.";
     private static final String FILE_CONTENT = Part1.readFromFile("part4.txt", "cp1251");
 
     public static void main(String[] args) {
-
-        Iterator<String> iterator = new Part4().iterator();
-        StringBuilder stringBuilder = new StringBuilder();
-
-        while (iterator.hasNext()){
-            stringBuilder.append(iterator.next()).append(System.lineSeparator());
+        
+        String[] array = FILE_CONTENT.split(System.lineSeparator());
+        StringBuilder stringBuilder1 = new StringBuilder();
+        for(String s : array){
+            stringBuilder1.append(s);
         }
-        System.out.print(stringBuilder.toString());
+
+        String fileContent = stringBuilder1.toString();
+        Pattern pattern = Pattern.compile(REGEX);
+        Matcher matcher = pattern.matcher(fileContent);
+
+        while (matcher.find()){
+            System.out.println(matcher.group());
+        }
 
     }
 
