@@ -2,7 +2,6 @@ package com.epam.rd.java.basic.practice4;
 
 import org.junit.Assert;
 import org.junit.Test;
-import static com.epam.rd.java.basic.practice4.Part1.LINE_SEPARATOR;
 
 public class Part1Test {
 
