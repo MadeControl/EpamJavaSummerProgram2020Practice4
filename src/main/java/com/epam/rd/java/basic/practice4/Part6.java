@@ -61,7 +61,7 @@ public class Part6 {
             stringBuilder.append(matcher.group()).append(" ");
         }
 
-        return stringBuilder.append(System.lineSeparator()).toString();
+        return stringBuilder.toString();
 
     }
 
