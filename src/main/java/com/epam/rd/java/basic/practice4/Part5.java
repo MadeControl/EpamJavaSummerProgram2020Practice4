@@ -15,7 +15,7 @@ public class Part5 {
 
     private static final Logger LOGGER = Logger.getLogger(Part3.class.getName());
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
 //        Properties properties = new Properties();
 //        properties.load(Part5.class.getClassLoader().getResourceAsStream("resources_ru.properties"));
