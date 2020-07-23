@@ -51,7 +51,6 @@ public class Part6 {
                 break;
             default: return stringBuilder
                     .append("Incorrect input")
-                    .append(System.lineSeparator())
                     .toString();
 
         }

@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public class Part5 {
 
-    private static final Logger LOGGER = Logger.getLogger(Part3.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Part5.class.getName());
 
     public static void main(String[] args) {
 
