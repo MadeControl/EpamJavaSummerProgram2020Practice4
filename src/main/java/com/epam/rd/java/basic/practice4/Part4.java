@@ -1,6 +1,5 @@
 package com.epam.rd.java.basic.practice4;
 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.regex.Matcher;
@@ -10,21 +9,20 @@ public class Part4 implements Iterable<String> {
 
     private static final String REGEX = "\\p{Lu}.*?\\.";
     private static final String FILE_CONTENT = Part1.readFromFile("part4.txt", "cp1251");
+    private static final String FILE_CONTENT_WITHOUT_SEPARATION = getContentFileWithoutSeparation();
 
     public static void main(String[] args) {
 
+        Iterator<String> iterator = new Part4().iterator();
         StringBuilder stringBuilder = new StringBuilder();
 
-        for(String s : FILE_CONTENT.split(System.lineSeparator())){
-            stringBuilder.append(s).append(" ");
+        while (iterator.hasNext()){
+            stringBuilder
+                    .append(iterator.next())
+                    .append(System.lineSeparator());
         }
 
-        Pattern pattern = Pattern.compile(REGEX);
-        Matcher matcher = pattern.matcher(stringBuilder.toString());
-
-        while (matcher.find()){
-            System.out.println(matcher.group());
-        }
+        System.out.print(stringBuilder.toString());
 
     }
 
@@ -36,7 +34,7 @@ public class Part4 implements Iterable<String> {
     private class MyClass implements Iterator<String> {
 
         Pattern pattern = Pattern.compile(REGEX, Pattern.UNICODE_CHARACTER_CLASS);
-        Matcher matcher = pattern.matcher(FILE_CONTENT);
+        Matcher matcher = pattern.matcher(FILE_CONTENT_WITHOUT_SEPARATION);
         boolean hasNext;
 
         @Override
@@ -57,6 +55,19 @@ public class Part4 implements Iterable<String> {
         public void remove() {
             throw new UnsupportedOperationException();
         }
+    }
+
+    public static String getContentFileWithoutSeparation(){
+
+        StringBuilder stringBuilder = new StringBuilder();
+        String[] arrayStringsOfText = FILE_CONTENT.split(System.lineSeparator());
+
+        for(String string : arrayStringsOfText){
+            stringBuilder.append(string).append(" ");
+        }
+
+        return stringBuilder.toString();
+
     }
 
 }
