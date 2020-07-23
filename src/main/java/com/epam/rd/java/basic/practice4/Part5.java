@@ -17,11 +17,11 @@ public class Part5 {
 
     public static void main(String[] args) throws IOException {
 
-        Properties properties = new Properties();
-        properties.load(Part5.class.getClassLoader().getResourceAsStream("resources_ru.properties"));
-        for (Map.Entry<Object, Object> o : properties.entrySet()) {
-            System.out.print(o.getKey() + " = " + o.getValue());
-        }
+//        Properties properties = new Properties();
+//        properties.load(Part5.class.getClassLoader().getResourceAsStream("resources_ru.properties"));
+//        for (Map.Entry<Object, Object> o : properties.entrySet()) {
+//            System.out.print(o.getKey() + " = " + o.getValue());
+//        }
 
 //        String consoleString;
 //        String languageString;
